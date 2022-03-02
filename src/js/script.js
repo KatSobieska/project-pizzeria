@@ -187,8 +187,7 @@
           if(optionImage){
             if(optionSelected) {
               optionImage.classList.add(classNames.menuProduct.imageVisible);
-            } else if (optionImage){
-              (!optionSelected);
+            } else {
               optionImage.classList.remove(classNames.menuProduct.imageVisible);
             }
           }
