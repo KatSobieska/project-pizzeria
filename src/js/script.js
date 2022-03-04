@@ -205,7 +205,7 @@
     }
   }
 
-  Class AmountWidget{
+  class AmountWidget{
     constructor(element){
       const thisWidget = this;
 
