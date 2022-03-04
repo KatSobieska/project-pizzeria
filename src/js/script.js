@@ -196,6 +196,15 @@
       thisProduct.priceElem.innerHTML = price;
     }
   }
+
+  Class AmountWidget{
+    constructor(element){
+      const thisWidget = this;
+
+      console.log('AmountWidget is:', thisWidget);
+      console.log('constructor arguments:', element);
+    }
+  }
   const app = {
     initMenu: function(){
       const thisApp = this;
