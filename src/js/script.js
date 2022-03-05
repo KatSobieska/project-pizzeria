@@ -212,11 +212,11 @@
     constructor(element){
       const thisWidget = this;
 
-      //console.log('AmountWidget is:', thisWidget);
-      //console.log('constructor arguments:', element);
+      console.log('AmountWidget is:', thisWidget);
+      console.log('constructor arguments:', element);
       
       thisWidget.getElements(element);
-      thisWidget.setValue(thisWidget.input.value);
+      thisWidget.setValue(settings.amountWidget.defaultValue);
       thisWidget.initActions();
     }
 
@@ -234,13 +234,18 @@
 
       const newValue = parseInt(value);
 
-      if(thisWidget.value !== newValue && !isNaN(newValue)) {
+      if(thisWidget.value !== newValue && !isNaN(newValue) ) {
         thisWidget.value = newValue;
       }
 
-      thisWidget.value = newValue;
+      if(thisWidget.value <= settings.amountWidget.defaultMin){
+        thisWidget.value = settings.amountWidget.defaultMin;
+      }
+      if(thisWidget.value >= settings.amountWidget.defaultMax){
+        thisWidget.value = settings.amountWidget.defaultMax;
+      }
       thisWidget.input.value = thisWidget.value;
-
+      
       thisWidget.announce();
     }
 
