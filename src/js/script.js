@@ -238,6 +238,8 @@
 
       thisWidget.value = newValue;
       thisWidget.input.value = thisWidget.value;
+
+      thisWidget.announce();
     }
 
     initActions(){
