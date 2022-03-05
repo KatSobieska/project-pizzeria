@@ -308,7 +308,10 @@
       thisCart.dom = {};
 
       thisCart.dom.wrapper = element;
+
+      thisCart.dom.toggleTrigger = thisCart.element.querySelector(select.cart.toggleTrigger);
     }
+
   }
   const app = {
     initMenu: function(){
