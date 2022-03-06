@@ -169,7 +169,6 @@
         thisProduct.processOrder();
         thisProduct.addToCart();
       });
-      console.log('initOrderForm:');
     }
 
     initAmountWidget(){
@@ -293,9 +292,6 @@
   class AmountWidget{
     constructor(element){
       const thisWidget = this;
-
-      console.log('AmountWidget is:', thisWidget);
-      console.log('constructor arguments:', element);
       
       thisWidget.getElements(element);
       thisWidget.setValue(settings.amountWidget.defaultValue);
@@ -355,8 +351,6 @@
 
       thisCart.getElements(element);
       thisCart.initActions();
-
-      console.log('new Cart', thisCart);
     }
 
     getElements(element){
@@ -381,8 +375,6 @@
     
     add(menuProduct){
       const thisCart = this;
-
-      console.log('adding product', menuProduct);
 
       const generatedHTML = templates.cartProduct(menuProduct);
 
