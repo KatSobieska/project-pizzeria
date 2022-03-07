@@ -395,6 +395,7 @@
       thisCartProduct.id = menuProduct.id;
       thisCartProduct.name = menuProduct.name;
       thisCartProduct.amount = menuProduct.amount;
+      thisCartProduct.price = menuProduct.price;
       thisCartProduct.priceSingle = menuProduct.priceSingle;
 
       thisCartProduct.getElements(element);
