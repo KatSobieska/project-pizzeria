@@ -425,6 +425,15 @@
       thisCart.dom.deliveryFee.innerHTML = deliveryFee;
       thisCart.dom.totalPrice.innerHTML = thisCart.totalPrice;
     }
+    remove(CartProduct){
+      const thisCart = this;
+
+      CartProduct.remove();
+
+      const allRemovedValues = thisCart.products.splice(CartProduct);
+      console.log('removed', allRemovedValues);
+      thisCart.update();
+    }
 
   }
   class CartProduct{
