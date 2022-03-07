@@ -383,7 +383,6 @@
       thisCart.dom.productList.appendChild(generatedDOM);
 
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
-      //console.log('thisCart.products', thisCart.products);
 
     }
 
@@ -399,7 +398,6 @@
       thisCartProduct.priceSingle = menuProduct.priceSingle;
 
       thisCartProduct.getElements(element);
-      console.log('thisCartProduct', thisCartProduct);
       thisCartProduct.initAmountWidget();
     }
     getElements(element){
