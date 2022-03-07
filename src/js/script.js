@@ -383,10 +383,35 @@
       thisCart.dom.productList.appendChild(generatedDOM);
 
       thisCart.products.push(menuProduct);
-      console.log('thisCart.products', thisCart.products);
+      //console.log('thisCart.products', thisCart.products);
 
     }
 
+  }
+  class CartProduct{
+    constructor(menuProduct, element){
+      const thisCartProduct = this;
+
+      thisCartProduct.id = menuProduct.id;
+      thisCartProduct.name = menuProduct.name;
+      thisCartProduct.amount = menuProduct.amount;
+      thisCartProduct.amount = menuProduct.priceSingle;
+
+      thisCartProduct.getElements(element);
+      console.log('thisCartProduct', thisCartProduct);
+    }
+    getElements(element){
+      const thisCartProduct = this;
+
+      thisCartProduct.dom = {};
+
+      thisCartProduct.dom.wrapper = element;
+      thisCartProduct.AmountWidget = element.querySelector(select.cartProduct.amountWidget);
+      thisCartProduct.price = element.querySelector(select.cartProduct.price);
+      thisCartProduct.edit = element.querySelector(select.cartProduct.edit);
+      thisCartProduct.remove = element.querySelector(select.cartProduct.remove);
+
+    }
   }
   const app = {
     initMenu: function(){
