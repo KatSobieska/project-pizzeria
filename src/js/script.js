@@ -382,7 +382,7 @@
 
       thisCart.dom.productList.appendChild(generatedDOM);
 
-      thisCart.products.push(menuProduct);
+      thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
       //console.log('thisCart.products', thisCart.products);
 
     }
@@ -395,7 +395,7 @@
       thisCartProduct.id = menuProduct.id;
       thisCartProduct.name = menuProduct.name;
       thisCartProduct.amount = menuProduct.amount;
-      thisCartProduct.amount = menuProduct.priceSingle;
+      thisCartProduct.priceSingle = menuProduct.priceSingle;
 
       thisCartProduct.getElements(element);
       console.log('thisCartProduct', thisCartProduct);
@@ -413,6 +413,7 @@
 
     }
   }
+  
   const app = {
     initMenu: function(){
       const thisApp = this;
