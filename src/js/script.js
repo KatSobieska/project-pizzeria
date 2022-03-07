@@ -377,6 +377,10 @@
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
 
+      thisCart.dom.productList.addEventListener('updated', function(){
+        thisCart.update();
+      });
+
     }
     
     add(menuProduct){
