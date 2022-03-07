@@ -384,7 +384,31 @@
 
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
 
+      this.update();
+
     }
+    update(){
+      const thisCart = this;
+
+      let deliveryFee = settings.cart.defaultDeliveryFee;
+
+      let totalNumber = 0;
+      let subtotalPrice = 0;
+
+      for(let product of thisCart.products){
+        totalNumber += product.amount;
+        subtotalPrice += product.price;
+      }
+      if(totalNumber <= 0){
+        deliveryFee = 0;
+      }
+
+      thisCart.totalPrice = subtotalPrice + deliveryFee;
+
+      console.log('show:', deliveryFee,totalNumber,subtotalPrice, thisCart.totalPrice);
+    }
+    
+   
 
   }
   class CartProduct{
@@ -424,8 +448,6 @@
     }
   }
 
-  
-  
   const app = {
     initMenu: function(){
       const thisApp = this;
