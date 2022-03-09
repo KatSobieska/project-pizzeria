@@ -310,6 +310,8 @@
     setValue(value){
       const thisWidget = this;
 
+      thisWidget.value = settings.amountWidget.defaultValue;
+
       const newValue = parseInt(value);
 
       if(thisWidget.value !== newValue && !isNaN(newValue) ) {
@@ -322,7 +324,7 @@
       if(thisWidget.value >= settings.amountWidget.defaultMax){
         thisWidget.value = settings.amountWidget.defaultMax;
       }
-      settings.amountWidget.defaultValue = thisWidget.value;
+      thisWidget.input.value = thisWidget.value;
       
       thisWidget.announce();
     }
@@ -423,14 +425,18 @@
       thisCart.dom.totalNumber.innerHTML = totalNumber;
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
       thisCart.dom.deliveryFee.innerHTML = deliveryFee;
-      thisCart.dom.totalPrice.innerHTML = thisCart.totalPrice;
+      
+      for(let totalPriceDOM of thisCart.dom.totalPrice ){
+        totalPriceDOM.innerHTML = thisCart.totalPrice;
+      }
     }
-    remove(CartProduct){
+    remove(cartProduct){
+      const thisCart = this;
       const thisCart = this;
 
-      CartProduct.dom.wrapper.remove();
+      cartProduct.dom.wrapper.remove();
 
-      const allRemovedValues = thisCart.products.splice(CartProduct);
+      const allRemovedValues = thisCart.products.splice(cartProduct);
       console.log('removed', allRemovedValues);
       thisCart.update();
     }
@@ -470,6 +476,8 @@
         thisCartProduct.amount = thisCartProduct.amountWidget;
         thisCartProduct.price = thisCartProduct.priceSingle * thisCartProduct.amount.value;
         thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
+
+
       });
     }
     remove(){
