@@ -227,6 +227,7 @@
         }
         
       }
+
       /* multiply price by amount */
       price *= thisProduct.amountWidget.value;
 
@@ -247,8 +248,8 @@
         id: thisProduct.id,
         name: thisProduct.data.name,
         amount: thisProduct.amountWidget.value,
-        priceSingle: thisProduct.priceSingle,
-        price: thisProduct.priceElem.innerHTML * thisProduct.amountWidget.value,
+        priceSingle: thisProduct.data.price,
+        price: thisProduct.data.price * thisProduct.amountWidget.value,
         params: thisProduct.prepareCartProductParams(),
 
       };
