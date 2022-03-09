@@ -293,8 +293,9 @@
     constructor(element){
       const thisWidget = this;
       
+      thisWidget.value(settings.amountWidget.defaultValue);
       thisWidget.getElements(element);
-      thisWidget.setValue(settings.amountWidget.defaultValue);
+      thisWidget.setValue(settings.amountWidget.input.value);
       thisWidget.initActions();
     }
 
