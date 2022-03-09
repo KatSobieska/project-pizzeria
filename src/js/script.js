@@ -294,7 +294,7 @@
       const thisWidget = this;
       
       thisWidget.getElements(element);
-      thisWidget.setValue(settings.amountWidget.input.value);
+      thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
     }
 
@@ -366,7 +366,7 @@
       thisCart.dom.productList = element.querySelector(select.cart.productList);
       thisCart.dom.deliveryFee = element.querySelector(select.cart.deliveryFee);
       thisCart.dom.subtotalPrice = element.querySelector(select.cart.subtotalPrice);
-      thisCart.dom.totalPrice = element.querySelector(select.cart.totalPrice);
+      thisCart.dom.totalPrice = element.querySelectorAll(select.cart.totalPrice);
       thisCart.dom.totalNumber = element.querySelector(select.cart.totalNumber);
     }
 
