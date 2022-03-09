@@ -312,7 +312,7 @@
       const thisWidget = this;
 
       thisWidget.value = settings.amountWidget.defaultValue;
-
+      
       const newValue = parseInt(value);
 
       if(thisWidget.value !== newValue && !isNaN(newValue) ) {
@@ -325,8 +325,9 @@
       if(thisWidget.value >= settings.amountWidget.defaultMax){
         thisWidget.value = settings.amountWidget.defaultMax;
       }
-      thisWidget.input.value = thisWidget.value;
       
+      thisWidget.input.value = thisWidget.value;
+
       thisWidget.announce();
     }
 
