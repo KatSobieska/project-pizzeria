@@ -432,7 +432,6 @@
     }
     remove(cartProduct){
       const thisCart = this;
-      const thisCart = this;
 
       cartProduct.dom.wrapper.remove();
 
