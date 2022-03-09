@@ -421,8 +421,6 @@
 
       thisCart.totalPrice = subtotalPrice + deliveryFee;
 
-      console.log('show:', deliveryFee,totalNumber,subtotalPrice, thisCart.totalPrice);
-
       thisCart.dom.totalNumber.innerHTML = totalNumber;
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
       thisCart.dom.deliveryFee.innerHTML = deliveryFee;
