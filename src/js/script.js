@@ -428,7 +428,7 @@
     remove(CartProduct){
       const thisCart = this;
 
-      CartProduct.remove();
+      CartProduct.dom.wrapper.remove();
 
       const allRemovedValues = thisCart.products.splice(CartProduct);
       console.log('removed', allRemovedValues);
@@ -472,19 +472,18 @@
         thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
       });
     }
-    //remove(){
-    //const thisCartProduct = this;
+    remove(){
+      const thisCartProduct = this;
 
-    //const event = new CustomEvent('remove', {
-    //bubbles: true,
-    //detail: {
-    //cartProduct: thisCartProduct,
-    //},
-    //});
+      const event = new CustomEvent('remove', {
+        bubbles: true,
+        detail: {
+          cartProduct: thisCartProduct,
+        },
+      });
 
-    //thisCartProduct.dom.wrapper.dispatchEvent(event);
-    //console.log('remove', thisCartProduct.remove());
-    //}
+      thisCartProduct.dom.wrapper.dispatchEvent(event);
+    }
     initActions(){
       const thisCartProduct = this;
 
@@ -493,7 +492,7 @@
       });
       thisCartProduct.dom.remove.addEventListener('click', function(event){
         event.preventDefault();
-        //thisCartProduct.remove();
+        thisCartProduct.remove();
       });
       
     }
