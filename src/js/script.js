@@ -293,7 +293,6 @@
     constructor(element){
       const thisWidget = this;
       
-      thisWidget.value(settings.amountWidget.defaultValue);
       thisWidget.getElements(element);
       thisWidget.setValue(settings.amountWidget.input.value);
       thisWidget.initActions();
@@ -323,7 +322,7 @@
       if(thisWidget.value >= settings.amountWidget.defaultMax){
         thisWidget.value = settings.amountWidget.defaultMax;
       }
-      thisWidget.input.value = thisWidget.value;
+      settings.amountWidget.defaultValue = thisWidget.value;
       
       thisWidget.announce();
     }
