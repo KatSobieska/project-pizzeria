@@ -449,7 +449,11 @@
       console.log('removed', allRemovedValues);
       thisCart.update();
     }
+    sendOrder(){
+      thisCart = this;
 
+      const url = settings.db.url + '/' + settings.db.orders;
+    }
 
   }
   class CartProduct{
