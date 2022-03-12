@@ -479,9 +479,7 @@
       };
 
       fetch(url, options);
-
     }
-
   }
   class CartProduct{
     constructor(menuProduct, element){
@@ -543,7 +541,6 @@
         event.preventDefault();
         thisCartProduct.remove();
       });
-      
     }
     getData(){
 
@@ -557,11 +554,9 @@
         priceSingle: thisCartProduct.priceSingle,
         name: thisCartProduct.name,
         params: thisCartProduct.params,
-
       };
 
       return productSummary;
-      
     }
   }
 
@@ -612,7 +607,6 @@
       thisApp.initCart();
     },
   };
-
   
   app.init();
 }
