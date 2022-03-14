@@ -177,6 +177,10 @@ class Product {
   addToCart() {
     const thisProduct = this;
 
+    thisProduct.name = thisProduct.data.name;
+    thisProduct.amount = thisProduct.amountWidget;
+    thisProduct.price = thisProduct.priceSingle;
+
     // app.cart.add(thisProduct.prepareCartProduct());
 
     const event = new CustomEvent('add-to-cart', {
