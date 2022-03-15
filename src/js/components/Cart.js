@@ -64,7 +64,7 @@ class Cart {
 
     thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
 
-    this.update();
+    thisCart.update();
   }
   update() {
     const thisCart = this;
