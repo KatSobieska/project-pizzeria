@@ -178,8 +178,9 @@ class Product {
     const thisProduct = this;
 
     thisProduct.name = thisProduct.data.name;
-    thisProduct.amount = thisProduct.amountWidget;
-    thisProduct.price = thisProduct.priceSingle;
+    thisProduct.amount = thisProduct.amountWidget.value;
+    thisProduct.price = thisProduct.data.price * thisProduct.amountWidget.value;
+    thisProduct.params = thisProduct.prepareCartProductParams();
 
     // app.cart.add(thisProduct.prepareCartProduct());
 
