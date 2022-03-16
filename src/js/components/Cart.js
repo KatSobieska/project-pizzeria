@@ -97,8 +97,11 @@ class Cart {
 
     cartProduct.dom.wrapper.remove();
 
-    const allRemovedValues = thisCart.products.splice(cartProduct);
-    console.log('removed', allRemovedValues);
+    const cartList = thisCart.products;
+    const allRemovedValues = cartList.indexOf(cartProduct);
+
+    cartList.splice(allRemovedValues, 1);
+
     thisCart.update();
   }
   sendOrder() {
