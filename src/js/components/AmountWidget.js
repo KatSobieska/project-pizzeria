@@ -8,6 +8,8 @@ class AmountWidget extends BaseWidget {
 
     thisWidget.getElements(element);
     thisWidget.initActions();
+
+    thisWidget.value = settings.amountWidget.defaultValue;
   }
 
   getElements() {
