@@ -168,9 +168,9 @@ class Product {
     }
 
     /* multiply price by amount */
-    price *= thisProduct.amountWidget.value;
 
     thisProduct.priceSingle = price;
+    price *= thisProduct.amountWidget.value;
     /* update calculated price in the HTML */
     thisProduct.priceElem.innerHTML = price;
   }
@@ -179,7 +179,8 @@ class Product {
 
     thisProduct.name = thisProduct.data.name;
     thisProduct.amount = thisProduct.amountWidget.value;
-    thisProduct.price = thisProduct.data.price * thisProduct.amountWidget.value;
+    thisProduct.price =
+      thisProduct.priceSingle * thisProduct.amountWidget.value;
     thisProduct.params = thisProduct.prepareCartProductParams();
 
     // app.cart.add(thisProduct.prepareCartProduct());
