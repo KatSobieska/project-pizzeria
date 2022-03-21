@@ -223,22 +223,35 @@ class Booking {
   }
 
   initTables() {
-    //const thisBooking = this;
-    //thisBooking.dom.allTables.addEventListener('click', function (event) {
-    //const clickedElem = event.target;
-    //const table = clickedElem.getAttribute(settings.booking.tableIdAttribute);
-    //const activeTable = document.querySelector('selected');
-    //if (table != null) {
-    //if (
-    //!clickedElem.classList.contains(
-    //classNames.booking.tableBooked && clickedElem != activeTable
-    //)
-    //) {
-    //clickedElem.classList.toggle(classNames.booking.tableSelected);
-    //} else {
-    //clickedElem.classList.toggle(classNames.booking.tableSelected);
-    //}
-    //}
+    const thisBooking = this;
+    thisBooking.dom.allTables.addEventListener('click', function (event) {
+      event.preventDefault();
+      const clickedElem = event.target;
+      console.log('clickedElem', clickedElem);
+
+      //const activeTable = document.querySelector('selected');
+
+      if (!clickedElem.classList.contains(classNames.booking.tableBooked)) {
+        const tables = thisBooking.element.querySelectorAll(
+          select.booking.tables
+        );
+
+        if (!clickedElem.classList.contains(classNames.booking.tableSelected)) {
+          for (let table of tables) {
+            table.classList.remove(classNames.booking.tableSelected);
+          }
+          clickedElem.classList.add(classNames.booking.tableSelected);
+        } else if (
+          clickedElem.classList.contains(classNames.booking.tableSelected)
+        ) {
+          clickedElem.classList.remove(classNames.booking.tableSelected);
+        }
+      } else {
+        console.log(alert('table unavailable'));
+      }
+
+      //const table = clickedElem.getAttribute(settings.booking.tableIdAttribute);
+    });
   }
 }
 
