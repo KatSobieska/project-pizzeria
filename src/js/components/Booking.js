@@ -74,9 +74,6 @@ class Booking {
         ]);
       })
       .then(function ([bookings, eventsCurrent, eventsRepeat]) {
-        //console.log('bookings', bookings);
-        //console.log('eventsCurrent', eventsCurrent);
-        //console.log('eventsRepeat', eventsRepeat);
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
       });
   }
@@ -112,8 +109,6 @@ class Booking {
       }
     }
 
-    //console.log('thisBooking.booked', thisBooking.booked);
-
     thisBooking.updateDOM();
   }
 
@@ -131,7 +126,6 @@ class Booking {
       hourBlock < startHour + duration;
       hourBlock += 0.5
     ) {
-      //console.log('loop', hourBlock);
       if (typeof thisBooking.booked[date][hourBlock] == 'undefined') {
         thisBooking.booked[date][hourBlock] = [];
       }
@@ -249,7 +243,6 @@ class Booking {
           );
         }
       }
-      console.log('thisBooking.starters', thisBooking.starters);
     });
   }
 
@@ -306,8 +299,6 @@ class Booking {
       payload.table
     );
 
-    //console.log('payload', payload);
-
     const options = {
       method: 'POST',
       header: {
@@ -317,8 +308,6 @@ class Booking {
     };
 
     fetch(url, options);
-
-    console.log('thisbooking.booked', thisBooking.booked);
   }
 }
 
