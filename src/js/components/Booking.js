@@ -227,9 +227,7 @@ class Booking {
     thisBooking.dom.allTables.addEventListener('click', function (event) {
       event.preventDefault();
       const clickedElem = event.target;
-      console.log('clickedElem', clickedElem);
-
-      //const activeTable = document.querySelector('selected');
+      //console.log('clickedElem', clickedElem);
 
       if (!clickedElem.classList.contains(classNames.booking.tableBooked)) {
         const tables = thisBooking.element.querySelectorAll(
@@ -240,17 +238,13 @@ class Booking {
           for (let table of tables) {
             table.classList.remove(classNames.booking.tableSelected);
           }
-          clickedElem.classList.add(classNames.booking.tableSelected);
-        } else if (
-          clickedElem.classList.contains(classNames.booking.tableSelected)
-        ) {
-          clickedElem.classList.remove(classNames.booking.tableSelected);
+          clickedElem.classList.toggle(classNames.booking.tableSelected);
+        } else {
+          clickedElem.classList.toggle(classNames.booking.tableSelected);
         }
       } else {
         console.log(alert('table unavailable'));
       }
-
-      //const table = clickedElem.getAttribute(settings.booking.tableIdAttribute);
     });
   }
 }
