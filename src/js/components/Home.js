@@ -12,7 +12,7 @@ class Home {
   render(element) {
     const thisHome = this;
 
-    const generatedHTML = templates.bookingWidget();
+    const generatedHTML = templates.home();
 
     thisHome.element = utils.createDOMFromHTML(generatedHTML);
 
