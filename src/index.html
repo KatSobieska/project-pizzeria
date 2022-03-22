@@ -78,24 +78,31 @@
   </div>
 
   <script id="template-home-page" type="text/x-handlebars-template">
-    <div class = "container">
-    <div class = "row navigation">
-      <div class ="navigation order">
-        <img src="./src./images./assets./pizza-1.jpg" alt="image">
-        <div class="order navigator">
-          <h2>ORDER ONLINE</h2>
-          <p>Delicious food delivered to your door</p>
+    <div class="container">      
+      <div class = "row navigation">
+        <div class ="navigation order">          
+          <div class="navigation-body">
+            <h1>Order online</h1>
+            <p>Delicious food delivered to your door</p>            
+            <a href="#order" class="btn">
+            <img src="./images/assets/pizza-1.jpg" alt="image">                
+            </a>
+          </div>
+        </div>
+        <div class ="navigation booking">      
+          <div class="navigation-body">
+            <h1>Book a table</h1>
+            <p>Delicious food in da house</p>               
+            <a href="#booking" class="btn">
+              <img src="./images/assets/pizza-2.jpg" alt="image">                
+            </a>
+          </div>
         </div>
       </div>
-      <div class ="navigation booking">
-        <img src="./src./images./assets./pizza-2.jpg" alt="image">
-        <div class="booking navigator">
-          <h2>BOOK A TABLE</h2>
-          <p>Delicious food delivered to your door</p>
-        </div>
+      <div class="opening-hours container">
+        <h2>Opening hours:</h2>
+        <p>TUE-SUN, 12PM - 12AM</p>        
       </div>
-    </div>
-  </div>
   </script>
   <script id="template-cart-product" type="text/x-handlebars-template">
     <li>
