@@ -1,0 +1,56 @@
+.home-wrapper {
+  margin: ($base-size * 3.5) auto;
+  padding: ($base-size * 6) ($base-size * 4);
+  background: $color-light;
+  border-bottom: 1px solid lighten($color-dark, 70%);
+  border-radius: $radius;
+}
+
+.row .navigation {
+  width: auto;
+  position: relative;
+  justify-content: space-between;
+  display: inline-flex;
+
+  img {
+    width: $base-size * 23;
+    height: $base-size * 10;
+    object-fit: cover;
+    border-radius: 5px;
+    z-index: 0;
+  }
+
+  a {
+    z-index: 1;
+  }
+  border: 1px solid black;
+}
+
+.navigation-body {
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  text-align: center;
+
+  h1 {
+    color: $color-light;
+    font-size: $base-size * 1.5;
+    font-family: $font-header;
+    position: absolute;
+    left: 30%;
+    z-index: 2;
+    transition: $transition;
+  }
+
+  p {
+    color: $color-light;
+    font-family: $font-text;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    left: 10%;
+    top: 60%;
+    transition: $transition;
+    visibility: hidden;
+  }
+}
