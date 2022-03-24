@@ -160,7 +160,7 @@ class Booking {
         !allAvailable &&
         thisBooking.booked[thisBooking.date][thisBooking.hour].includes(
           tableId
-        ) > -1
+        ) >= 1
       ) {
         table.classList.add(classNames.booking.tableBooked);
       } else {
@@ -251,27 +251,32 @@ class Booking {
     thisBooking.dom.allTables.addEventListener('click', function (event) {
       event.preventDefault();
       const clickedElem = event.target;
+      console.log('clicked', clickedElem);
 
       const tableId = clickedElem.getAttribute(
         settings.booking.tableIdAttribute
       );
       thisBooking.tableId = parseInt(tableId);
 
-      if (!clickedElem.classList.contains(classNames.booking.tableBooked)) {
-        const tables = thisBooking.element.querySelectorAll(
-          select.booking.tables
-        );
+      if (tableId != null) {
+        if (!clickedElem.classList.contains(classNames.booking.tableBooked)) {
+          const tables = thisBooking.element.querySelectorAll(
+            select.booking.tables
+          );
 
-        if (!clickedElem.classList.contains(classNames.booking.tableSelected)) {
-          for (let table of tables) {
-            table.classList.remove(classNames.booking.tableSelected);
+          if (
+            !clickedElem.classList.contains(classNames.booking.tableSelected)
+          ) {
+            for (let table of tables) {
+              table.classList.remove(classNames.booking.tableSelected);
+            }
+            clickedElem.classList.toggle(classNames.booking.tableSelected);
+          } else {
+            clickedElem.classList.toggle(classNames.booking.tableSelected);
           }
-          clickedElem.classList.toggle(classNames.booking.tableSelected);
         } else {
-          clickedElem.classList.toggle(classNames.booking.tableSelected);
+          alert('table unavailable');
         }
-      } else {
-        console.log(alert('table unavailable'));
       }
     });
   }
@@ -292,6 +297,8 @@ class Booking {
       address: thisBooking.dom.address.value,
     };
 
+    console.log('payload', payload);
+
     thisBooking.makeBooked(
       payload.date,
       payload.hour,
@@ -308,6 +315,7 @@ class Booking {
     };
 
     fetch(url, options);
+    console.log(thisBooking.booked);
   }
 }
 
