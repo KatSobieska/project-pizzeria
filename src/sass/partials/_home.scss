@@ -6,24 +6,12 @@
   border-radius: $radius;
 }
 
+/* header */
 .row .navigation {
   width: auto;
   position: relative;
   justify-content: space-between;
   display: inline-flex;
-
-  img {
-    width: $base-size * 23;
-    height: $base-size * 10;
-    object-fit: cover;
-    border-radius: 5px;
-    z-index: 0;
-  }
-
-  a {
-    z-index: 1;
-  }
-  border: 1px solid black;
 }
 
 .navigation-body {
@@ -32,12 +20,26 @@
   position: relative;
   text-align: center;
 
+  img {
+    width: $base-size * 23;
+    height: $base-size * 10;
+    object-fit: cover;
+    border-radius: 5px;
+    z-index: 0;
+    margin: 3px;
+  }
+
+  a {
+    z-index: 1;
+  }
+
   h1 {
     color: $color-light;
     font-size: $base-size * 1.5;
     font-family: $font-header;
     position: absolute;
     left: 30%;
+    top: 20%;
     z-index: 2;
     transition: $transition;
   }
@@ -48,9 +50,144 @@
     position: absolute;
     z-index: 2;
     text-align: center;
-    left: 10%;
-    top: 60%;
+    left: 15%;
+    top: 50%;
     transition: $transition;
     visibility: hidden;
   }
+}
+
+.navigation-body:hover {
+  h1 {
+    transform: translateY(-20px);
+  }
+
+  p {
+    transform: translateY(-20px);
+    visibility: visible;
+  }
+}
+
+.opening-hours {
+  background-color: $color-main;
+  border-radius: 5px;
+  width: auto;
+  height: $base-size * 10;
+  color: $color-light;
+  text-align: center;
+  position: relative;
+  font-family: $font-header;
+
+  h2 {
+    margin: 0;
+    padding-top: 20px;
+  }
+}
+
+/* carousel */
+
+.carousel {
+  height: $base-size * 16;
+  border-radius: 5px;
+}
+
+.box {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+.box img {
+  flex: 0 0 33%;
+  height: $base-size * 14;
+  width: $base-size * 14;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+.box-description {
+  flex: 0 0 66%;
+  padding-left: $base-size * 2;
+  padding-right: $base-size;
+  width: 100%;
+  font-family: $font-text;
+  color: $color-dark;
+}
+
+.carousel-cell {
+  width: 100%;
+  height: $base-size * 16;
+  margin-top: 40px;
+}
+/* gallery */
+
+.gallery {
+  margin-top: $base-size * 9;
+  display: inline-block;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.images-container {
+  padding: 5px;
+  width: 100%;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+
+  img {
+    height: $base-size * 14;
+    width: $base-size * 14;
+    object-fit: cover;
+    z-index: 0;
+    border-radius: 5px;
+  }
+
+  .icon-container {
+    position: absolute;
+    left: 40%;
+    visibility: hidden;
+    transition: $transition;
+    z-index: 2;
+
+    .icon {
+      color: $color-light;
+      font-size: $base-size;
+    }
+  }
+}
+
+.image:hover {
+  .icon-container {
+    visibility: visible;
+    transform: scale(3);
+  }
+
+  .icon:hover {
+    color: $color-main;
+  }
+}
+
+.image:hover::after {
+  content: '';
+  display: flex;
+  position: absolute;
+  height: $base-size * 14;
+  width: $base-size * 14;
+  opacity: 0.3;
+  background: black;
+  z-index: 1;
+}
+
+.instagram-link {
+  color: $color-main;
 }
