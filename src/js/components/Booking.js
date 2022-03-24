@@ -251,7 +251,6 @@ class Booking {
     thisBooking.dom.allTables.addEventListener('click', function (event) {
       event.preventDefault();
       const clickedElem = event.target;
-      console.log('clicked', clickedElem);
 
       const tableId = clickedElem.getAttribute(
         settings.booking.tableIdAttribute
@@ -297,8 +296,6 @@ class Booking {
       address: thisBooking.dom.address.value,
     };
 
-    console.log('payload', payload);
-
     thisBooking.makeBooked(
       payload.date,
       payload.hour,
@@ -315,7 +312,6 @@ class Booking {
     };
 
     fetch(url, options);
-    console.log(thisBooking.booked);
   }
 }
 
