@@ -158,9 +158,7 @@ class Booking {
 
       if (
         !allAvailable &&
-        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(
-          tableId
-        ) >= 1
+        thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
       ) {
         table.classList.add(classNames.booking.tableBooked);
       } else {
@@ -296,13 +294,6 @@ class Booking {
       address: thisBooking.dom.address.value,
     };
 
-    thisBooking.makeBooked(
-      payload.date,
-      payload.hour,
-      payload.duration,
-      payload.table
-    );
-
     const options = {
       method: 'POST',
       header: {
@@ -311,7 +302,14 @@ class Booking {
       body: JSON.stringify(payload),
     };
 
-    fetch(url, options);
+    fetch(url, options).then(function () {
+      thisBooking.makeBooked(
+        payload.date,
+        payload.hour,
+        payload.duration,
+        payload.table
+      );
+    });
   }
 }
 
